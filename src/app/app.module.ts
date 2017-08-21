@@ -1,14 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { Principal } from './pages/principal';
+import { reducer } from './store/reducers';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Principal
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({ counter: reducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
